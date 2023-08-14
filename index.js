@@ -41,42 +41,47 @@ function showPrompt() {
             const value1 = parseFloat(window.prompt("Enter the first value:"));
             const value2 = parseFloat(window.prompt("Enter the second value:"));
             let result;
-            switch (operation) {
-                case "add":
-                    result = value1 + value2;
-                    break;
-                case "substract":
-                    result = value1 - value2;
-                    break;
-                case "divide":
-                    result = value1 / value2;
-                    break;
-                case "multiply":
-                    result = value1 * value2;
-                    break;
+            if (value1 !== NaN && value2 !== NaN) {
+                switch (operation) {
+                    case "add":
+                        result = value1 + value2;
+                        break;
+                    case "substract":
+                        result = value1 - value2;
+                        break;
+                    case "divide":
+                        result = value1 / value2;
+                        break;
+                    case "multiply":
+                        result = value1 * value2;
+                        break;
+                }
+                alert(`${value1} ${operation} by ${value2} = ${result}`)
+            } else {
+                alert("Invalid input!")
             }
-            alert(`${value1} ${operation} by ${value2} = ${result}`)
         }
-
         function calculate2(operation) {
             const value1 = parseFloat(window.prompt("Enter the value:"))
             let result;
             let operationName
-            switch (operation) {
-                case "secondPow":
-                    operationName = "Second pow of";
-                    result = Math.pow(value1, 2);
-                    break;
-                case "rootSecondPow":
-                    operationName = "Root second pow of";
-                    result = Math.sqrt(value1);
-                    break;
-                case "rootThirdPow":
-                    operationName = "Root third pow of"
-                    result = Math.cbrt(value1)
-                    break;
+            if (value1 !== NaN) {
+                switch (operation) {
+                    case "secondPow":
+                        operationName = "Second pow of";
+                        result = Math.pow(value1, 2);
+                        break;
+                    case "rootSecondPow":
+                        operationName = "Root second pow of";
+                        result = Math.sqrt(value1);
+                        break;
+                    case "rootThirdPow":
+                        operationName = "Root third pow of"
+                        result = Math.cbrt(value1)
+                        break;
+                }
+                alert(`${operationName} ${value1} is ${result}`)
             }
-            alert(`${operationName} ${value1} is ${result}`)
         }
     }
 }
