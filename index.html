@@ -7,21 +7,11 @@
   <title>Project Calculator</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <style>
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    .container-flex {
-      flex: 1;
-    }
-  </style>
 </head>
 
-<body>
-  <div class="container-fluid p-3 mb-2 bg-info text-dark d-flex justify-content-center align-items-center">
+<body class ="bg-info">
+  <div class="container-fluid p-3 mb-2 text-dark d-flex justify-content-center align-items-center"
+    style="height: calc(100vh - 56px);">
     <div class="text-center">
       <h1> CALCULATOR </h1>
       <button id="startButton" onclick="showPrompt()" class="btn btn-success">Start!</button>
@@ -31,7 +21,7 @@
   <div class="container-flex">
     <!-- Your content here -->
   </div>
-  <footer class="footer bg-dark text-white text-center py-3">
+  <footer class="footer bg-dark text-white text-center py-3 mb-0">
     <div class="container">
       <p>&copy; 2023 Depok Developer Team. All rights reserved.</p>
     </div>
