@@ -14,6 +14,8 @@ function showPrompt() {
         const showMenuAgain = confirm("Do you want to show the menu again?");
         if (showMenuAgain) {
             showPrompt();
+        } else {
+            alert('Thanks for using Calculator Depok!')
         }
     }
 
