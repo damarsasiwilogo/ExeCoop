@@ -10,6 +10,13 @@ function showPrompt() {
     7. Akar pangkat 3
     `);
 
+    function showMenuAgain() {
+        const showMenuAgain = confirm("Do you want to show the menu again?");
+        if (showMenuAgain) {
+            showPrompt();
+        }
+    }
+
     if (userInput !== null) {
         switch (userInput) {
             case "1":
@@ -35,32 +42,35 @@ function showPrompt() {
                 break;
             default:
                 alert("Invalid menu")
+                showMenuAgain()
+        }
+    }
+    function calculate(operation) {
+        const value1 = parseFloat(window.prompt("Enter the first value:"));
+        const value2 = parseFloat(window.prompt("Enter the second value:"));
+        let result;
+        if (value1 !== NaN && value2 !== NaN) {
+            switch (operation) {
+                case "add":
+                    result = value1 + value2;
+                    break;
+                case "substract":
+                    result = value1 - value2;
+                    break;
+                case "divide":
+                    result = value1 / value2;
+                    break;
+                case "multiply":
+                    result = value1 * value2;
+                    break;
+            }
+            alert(`${value1} ${operation} by ${value2} = ${result}`)
+            showMenuAgain()
+        } else {
+            alert("Invalid input!")
+            showMenuAgain()
         }
 
-        function calculate(operation) {
-            const value1 = parseFloat(window.prompt("Enter the first value:"));
-            const value2 = parseFloat(window.prompt("Enter the second value:"));
-            let result;
-            if (value1 !== NaN && value2 !== NaN) {
-                switch (operation) {
-                    case "add":
-                        result = value1 + value2;
-                        break;
-                    case "substract":
-                        result = value1 - value2;
-                        break;
-                    case "divide":
-                        result = value1 / value2;
-                        break;
-                    case "multiply":
-                        result = value1 * value2;
-                        break;
-                }
-                alert(`${value1} ${operation} by ${value2} = ${result}`)
-            } else {
-                alert("Invalid input!")
-            }
-        }
         function calculate2(operation) {
             const value1 = parseFloat(window.prompt("Enter the value:"))
             let result;
@@ -81,6 +91,10 @@ function showPrompt() {
                         break;
                 }
                 alert(`${operationName} ${value1} is ${result}`)
+                showMenuAgain()
+            } else {
+                alert("Invalid inputted value!")
+                showMenuAgain()
             }
         }
     }
